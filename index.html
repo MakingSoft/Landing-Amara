@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify@4.27.0/dist/tagify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify@4.27.0/dist/tagify.min.js"></script>
+
     <meta charset="utf-8">
     <title>Amara - Register Trademark</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -217,58 +225,87 @@
 
     <!-- Callback Start -->
     <section id="register">
-    <div class="container-fluid callback my-5 pt-5">
-        <div class="container pt-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-7">
-                    <div class="bg-white border rounded p-4 p-sm-5 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                            <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Get In Touch
-                            </p>
-                            <h1 class="display-5 mb-5">Request A Call-Back</h1>
-                        </div>
-                        <div class="row g-3">
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
+        <div class="container-fluid callback my-5 pt-5">
+            <div class="container pt-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <div class="bg-white border rounded p-4 p-sm-5 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                                <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Get In Touch</p>
+                                <h1 class="display-5 mb-5">Register Trademark</h1>
+                            </div>
+                            <form id="callback-form">
+                                <div class="row g-3">
+                                    <div class="col-sm-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                            <label for="name">Your Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                            <label for="email">Your Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="mobile" placeholder="Your Mobile" required>
+                                            <label for="mobile">Your Mobile</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="brand-type" required>
+                                                <option value="" disabled selected>Select Type</option>
+                                                <option value="denominative">Word trademark</option>
+                                                <option value="figurative">Figurative trademark</option>
+                                                <option value="mixed">Logo trademark</option>
+                                            </select>
+                                            <label for="brand-type">Brand Type</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12" id="upload-file-container" style="display: none;">
+                                        <div class="form-floating">
+                                            <input type="file" class="form-control" id="upload-file">
+                                            <label for="upload-file">Logo</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12" id="denomination-container" style="display: none;">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="denomination" placeholder="trademark">
+                                            <label for="denomination">trademark</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="countries" required>
+                                            <label for="countries">Countries to Register</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12" id="services-container">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="services" placeholder="Goods and services description">
+                                            <label for="services">Goods and services description</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Leave a message here" id="observations" style="height: 100px"></textarea>
+                                            <label for="observations">Observations</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="mail" placeholder="Your Email">
-                                    <label for="mail">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="mobile" placeholder="Your Mobile">
-                                    <label for="mobile">Your Mobile</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                    <label for="subject">Subject</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message"
-                                        style="height: 100px"></textarea>
-                                    <label for="message">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12 text-center">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Submit Now</button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>   
-    </section> 
+        </div>   
+    </section>    
     <!-- Callback End -->
 
 
@@ -332,8 +369,7 @@
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a
-                    href="https://themewagon.com">ThemeWagon</a>
+                    Designed By Amara
                 </div>
             </div>
         </div>
@@ -347,7 +383,6 @@
 
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
@@ -357,6 +392,53 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const brandType = document.getElementById('brand-type');
+            const uploadFileContainer = document.getElementById('upload-file-container');
+            const denominationContainer = document.getElementById('denomination-container');
+
+            brandType.addEventListener('change', function() {
+                if (this.value === 'figurative' || this.value === 'mixed') {
+                    uploadFileContainer.style.display = 'block';
+                } else {
+                    uploadFileContainer.style.display = 'none';
+                }
+
+                if (this.value === 'denominative'|| this.value === 'mixed') {
+                    denominationContainer.style.display = 'block';
+                } else {
+                    denominationContainer.style.display = 'none';
+                }
+            });
+
+            const countriesInput = document.getElementById('countries');
+            const tagify = new Tagify(countriesInput, {
+                whitelist: [],
+                dropdown: {
+                    maxItems: 20, // show 20 items max
+                    classname: "countries-list", // custom class for the dropdown
+                    enabled: 3, // show the dropdown immediately on focus
+                    closeOnSelect: false // keep the dropdown open after selecting a country
+                }
+            });
+
+            function fetchCountries() {
+                return fetch('https://restcountries.com/v3.1/all')
+                    .then(response => response.json())
+                    .then(data => data.map(country => country.name.common));
+            }
+
+            countriesInput.addEventListener('input', async function() {
+                const term = countriesInput.value.toLowerCase();
+                const countries = await fetchCountries();
+                const filteredCountries = countries.filter(country => country.toLowerCase().includes(term));
+                tagify.settings.whitelist = filteredCountries; // update the whitelist
+                tagify.dropdown.show.call(tagify, term); // render the suggestions dropdown
+            });
+        });
+    </script>
 </body>
 
 </html>
